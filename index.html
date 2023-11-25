@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configuração de caracteres e viewport para responsividade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Fadelivery - Início</title>
+    <!-- Importação de estilos externos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estilo-padrao/header.css">
+    <link rel="stylesheet" href="estilo-padrao/footer.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-bar">
+            <!-- Logo e link para a página inicial -->
+            <a href=""><h1 class="fadelivery">Fadelivery</h1></a>
+            <!-- Ícone do menu mobile e função de alternância -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <img src="img/icons/star.png" alt="">
+            </div>
+            <!-- Lista de navegação -->
+            <ul class="menu">
+                <li><a href="">Fadas</a></li>
+                <li><a href="">Contato</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Nossa Qualidade</a></li>
+                <!-- Ícone do carrinho de compras -->
+                <li>
+                    <a href="">
+                      <div class="basket">
+                        <img class="icon-basket" src="img/icons/basket.png" alt="">
+                    </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Corpo principal da página -->
+    <main>
+        <!-- Título e subtitulo -->
+        <h1 class="title2">Olá Beautie!</h1>
+        <h2>Veja o que separamos para você:</h2>
+
+        <!-- Slider utilizando o Swiper -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="img/banners/cafe.jpg" alt=""><div class="overlay-text"><h1>Doce de Mel</h1></div></div>
+                <div class="swiper-slide"><img src="img/banners/tacos.jpg" alt=""><div class="overlay-text"><h1>Taco's Mexican</h1></div></div>
+                <div class="swiper-slide"><img src="img/banners/cafe.jpg" alt=""><div class="overlay-text"><h1>Flora & Café</h1></div></div>
+            </div>
+        </div>
+
+        <!-- Categorias e botão de entrada -->
+        <div class="pure-g categorias">
+            <!-- Cada célula representa uma categoria -->
+            <!-- Exemplo de categoria: Supermercado -->
+            <div class="pure-u-1-3 pure-u-md-1-6 celula">
+                <div class="category">
+                    <img class="icon" src="img/icons/basket_c.png" alt="">
+                </div>
+                <p>Supermercado</p>
+            </div>
+            <div class="pure-u-1-3 pure-u-md-1-6 celula">
+                <div class="category">
+                    <img class="icon" src="img/icons/restaurant.png" alt="">
+                </div>
+                <p>Restaurantes</p>
+            </div>
+            <div class="pure-u-1-3 pure-u-md-1-6 celula">
+                <div class="category">
+                    <img class="icon" src="img/icons/medicines.png" alt="">
+                </div>
+                <p>Farmácia</p>
+            </div>
+            <div class="pure-u-1-3 pure-u-md-1-6 celula">
+                <div class="category">
+                    <img class="icon" src="img/icons/paw.png" alt="">
+                </div>
+                <p>Pet-Shop</p>
+            </div>
+            <div class="pure-u-1-3 pure-u-md-1-6 celula">
+                <div class="category">
+                    <img class="icon" src="img/icons/confetti.png" alt="">
+                </div>
+                <p>Eventos</p>
+            </div>
+            <div class="pure-u-1-3 pure-u-md-1-6 celula">
+                <div class="category">
+                    <img class="icon" src="img/icons/agriculture.png" alt="">
+                </div>
+                <p>Bôtanica</p>
+            </div>
+        </div>
+
+        <!-- Botão para explorar categorias -->
+        <div class="button-basis">
+            <div class="button">
+                <h1>Entre em uma categoria e conheça nossas fadas!</h1>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-bar pure-g">
+            <!-- Links para redes sociais -->
+            <a class=" pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="img/icons/instagram.png" alt=""> <h1>Instagram</h1> </div></a>
+            <a class=" pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="img/icons/facebook.png" alt=""> <h1>Facebook</h1> </div></a>
+            <a class=" pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="img/icons/twitter.png" alt=""> <h1>Twitter</h1> </div></a>
+            <!-- Texto de direitos autorais -->
+            <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
+        </div>
+    </footer>
+
+    <!-- Scripts para funcionalidades -->
+    <script>
+        // Função para alternar o menu mobile
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicialização do Swiper para o slider
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".mySwiper", {
+                effect: "cards",
+                grabCursor: true,
+            });
+        });
+    </script>
+</body>
+</html>

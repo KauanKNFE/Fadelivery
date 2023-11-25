@@ -1,0 +1,186 @@
+/* Fontes personalizadas */
+@font-face {
+  font-family: "Lobster";
+  src: url(fonts/Lobster-Regular.ttf);
+}
+
+/* Estilos gerais */
+/* Estilos do título2 */
+.title2 {
+  font-family: "Lobster";
+  color: #E9678F;
+  margin-left: 20px;
+}
+
+/* Estilos para o subtitulo */
+h2 {
+  font-family: "Montserrat";
+  color: #E9678F;
+  text-align: center;
+}
+
+/* Estilos do ícone do Instagram */
+.insta {
+  margin-left: 20px;
+  font-size: 32px;
+}
+
+/* Estilos do Swiper */
+.mySwiper {
+  width: 720px; /* ou outra largura desejada */
+  height: 420px;
+  margin: 0 auto; /* para centralizar a div */
+}
+
+@media screen and (max-width: 768px) {
+  .mySwiper {
+    width: 320px; /* ou outra largura desejada */
+    height: 180px;
+    margin: 0 auto; /* para centralizar a div */
+  }
+}
+
+/* Estilos dos slides do Swiper */
+.swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: filter 0.3s ease;
+}
+
+.overlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: fit-content;
+}
+
+.overlay-text {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-family: "Montserrat";
+  width: fit-content;
+}
+
+.swiper-slide:hover .overlay,
+.swiper-slide:hover .overlay-text {
+  opacity: 1;
+}
+
+.swiper-slide:hover img {
+  filter: blur(5px);
+}
+
+/* Outros estilos */
+.pure-g.categorias {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #E9678F;
+  font-family: "Montserrat";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
+}
+
+/* Estilos das células de categorias */
+.celula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilos das categorias */
+.category {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  background-color: #E9678F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos dos botões */
+.button-basis {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button {
+  background-color: #E9678F;
+  color: #FFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  width: fit-content;
+  padding: 0 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 30px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+  main {
+    padding: 0px 10px;
+  }
+
+  .category {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .icon {
+    max-width: 50%;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .button {
+    font-size: 10px;
+  }
+}
+
+/* Estilos de hover para botões e categorias */
+.button:hover,
+.category:hover {
+  background-color: #D94677;
+}
