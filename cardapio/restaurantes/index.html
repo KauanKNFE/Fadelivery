@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Configuração de caracteres e viewport para responsividade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>Fadelivery - Cardápio</title>
+
+    <!-- Importação de estilos externos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../padrao/estilo.css"> <!-- Estilo local -->
+    <link rel="stylesheet" href="../../estilo-padrao/header.css"> <!-- Estilo do cabeçalho -->
+    <link rel="stylesheet" href="../../estilo-padrao/footer.css"> <!-- Estilo do rodapé -->
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-bar">
+            <!-- Logo e link para a página inicial -->
+            <a href="../../index.html">
+                <h1 class="fadelivery">Fadelivery</h1>
+            </a>
+
+            <!-- Ícone do menu mobile e função de alternância -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <rect width="30" height="2" fill="#FFF" />
+                    <rect y="7" width="30" height="2" fill="#FFF" />
+                    <rect y="14" width="30" height="2" fill="#FFF" />
+                    <rect y="21" width="30" height="2" fill="#FFF" />
+                </svg>
+            </div>
+
+            <!-- Lista de navegação -->
+            <ul class="menu">
+                <li><a href="">Fadas</a></li>
+                <li><a href="">Contato</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Nossa Qualidade</a></li>
+
+                <!-- Ícone do carrinho de compras -->
+                <li>
+                    <a href="../../carrinho/index.html">
+                        <div class="basket">
+                            <img class="icon-basket" src="../../img/icons/basket.png" alt="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Corpo principal da página -->
+    <main class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-2 container-t">
+            <div class="name-background">
+                <h1 class="title2">Pratos em Restaurantes</h1>
+            </div>
+            <p class="slogan">Os melhores pratos selecionados até sua casa!</p>
+
+            <h2>Nossos itens mais pedidos!</h2>
+
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="bolinho.jpeg" alt=""><div class="overlay-text"><h1>Bolinho de Bacalhau</h1></div></div>
+                    <div class="swiper-slide"><img src="risoto.jpeg" alt=""><div class="overlay-text"><h1>Risoto de Funghi</h1></div></div>
+                    <div class="swiper-slide"><img src="petit.jpeg" alt=""><div class="overlay-text"><h1>Petit Gateau</h1></div></div>
+                    <div class="swiper-slide"><img src="bruschetta.jpeg" alt=""><div class="overlay-text"><h1>Bruschetta</h1></div></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <h2>Entregador: Brandon</h2>
+            <div class="fada"><img class="fada-img fadalaranja" src="../../img/fadas/laranja.jfif" alt=""></div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-2 container-b">
+            <h1 class="title3">Cardápio</h1>
+
+            <h3 class="entrega">Hoje, 18-22 min. R$5,00</h3>
+            <div id="cardapio">
+                <!-- Categoria Aperitivos -->
+                <h2 class="pure-u-1">Aperitivos</h2>
+
+                <!-- Item Bolinho de Bacalhau -->
+                <div id="bolinho-bacalhau" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Bolinho de Bacalhau</h4>
+                    <p data-price="15.00">R$15,00</p>
+                    <button onclick="addToCart('bolinho-bacalhau', 'Bolinho de Bacalhau', 15.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Bruschetta -->
+                <div id="bruschetta" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Bruschetta</h4>
+                    <p data-price="12.50">R$12,50</p>
+                    <button onclick="addToCart('bruschetta', 'Bruschetta', 12.50)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Canapé de Salmão -->
+                <div id="canape-salmao" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Canapé de Salmão</h4>
+                    <p data-price="18.00">R$18,00</p>
+                    <button onclick="addToCart('canape-salmao', 'Canapé de Salmão', 18.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Batatas Bravas -->
+                <div id="batatas-bravas" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Batatas Bravas</h4>
+                    <p data-price="10.00">R$10,00</p>
+                    <button onclick="addToCart('batatas-bravas', 'Batatas Bravas', 10.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Categoria Principal -->
+                <h2 class="pure-u-1">Principais</h2>
+
+                <!-- Item Risoto de Funghi -->
+                <div id="risoto-funghi" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Risoto de Funghi</h4>
+                    <p data-price="25.00">R$25,00</p>
+                    <button onclick="addToCart('risoto-funghi', 'Risoto de Funghi', 25.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Strogonoff de Carne -->
+                <div id="strogonoff-carne" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Strogonoff de Carne</h4>
+                    <p data-price="25.00">R$25,00</p>
+                    <button onclick="addToCart('strogonoff-carne', 'Strogonoff de Carne', 25.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Peito de Frango Grelhado -->
+                <div id="peito-frango-grelhado" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Peito de Frango Grelhado</h4>
+                    <p data-price="18.00">R$18,00</p>
+                    <button onclick="addToCart('peito-frango-grelhado', 'Peito de Frango Grelhado', 18.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Massa Carbonara -->
+                <div id="massa-carbonara" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Massa Carbonara</h4>
+                    <p data-price="20.00">R$20,00</p>
+                    <button onclick="addToCart('massa-carbonara', 'Massa Carbonara', 20.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Categoria Sobremesas -->
+                <h2 class="pure-u-1">Sobremesas</h2>
+
+                <!-- Item Petit Gateau -->
+                <div id="petit-gateau" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Petit Gateau</h4>
+                    <p data-price="18.00">R$18,00</p>
+                    <button onclick="addToCart('petit-gateau', 'Petit Gateau', 18.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Mousse de Chocolate -->
+                <div id="mousse-chocolate" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Mousse de Chocolate</h4>
+                    <p data-price="14.00">R$14,00</p>
+                    <button onclick="addToCart('mousse-chocolate', 'Mousse de Chocolate', 14.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Cheesecake -->
+                <div id="cheesecake" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Cheesecake</h4>
+                    <p data-price="16.00">R$16,00</p>
+                    <button onclick="addToCart('cheesecake', 'Cheesecake', 16.00)">Adicionar ao carrinho</button>
+                </div>
+
+                <!-- Item Pudim -->
+                <div id="pudim" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Pudim</h4>
+                    <p data-price="12.00">R$12,00</p>
+                    <button onclick="addToCart('pudim', 'Pudim', 12.00)">Adicionar ao carrinho</button>
+                </div>
+            </div>
+
+            <a href="../../carrinho/index.html"><h3 class="entrega2">Itens no carrinho: <span
+                        id="cart-count">0</span> - Total: R$<span id="total-price">0.00</span><p></p> Compre
+                    Agora!</h3></a>
+
+        </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-bar pure-g">
+            <!-- Links para redes sociais -->
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social"
+                        src="../../img/icons/instagram.png" alt=""> <h1>Instagram</h1> </div></a>
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social"
+                        src="../../img/icons/facebook.png" alt=""> <h1>Facebook</h1> </div></a>
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social"
+                        src="../../img/icons/twitter.png" alt=""> <h1>Twitter</h1> </div></a>
+
+            <!-- Direitos autorais -->
+            <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
+        </div>
+    </footer>
+
+    <!-- Script para alternar o menu mobile -->
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicialização do Swiper para o slider
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".mySwiper", {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                effect: "cards",
+                grabCursor: true,
+            });
+        });
+    </script>
+    <script>
+        // Função para atualizar a contagem e o valor total do carrinho na página do restaurante
+        function updateCartInfo() {
+            var cartCountElement = document.getElementById('cart-count');
+            var totalPriceElement = document.getElementById('total-price');
+    
+            // Recupere as informações do localStorage
+            var storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+    
+            // Atualize a contagem e o valor total na página do restaurante
+            var totalItems = calculateTotalItems(storedCartItems);
+            var total = calculateTotalPrice(storedCartItems);
+    
+            cartCountElement.textContent = totalItems;
+            totalPriceElement.textContent = total.toFixed(2);
+        }
+    
+        // Chamada à função updateCartInfo ao carregar a página ou sempre que a página for exibida
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+        window.addEventListener('pageshow', updateCartInfo);
+    
+        function addToCart(itemId, itemName, itemPrice, restaurantName) {
+            // Use o nome do restaurante como chave no localStorage
+            var key = restaurantName || 'default';
+            var restaurantCart = JSON.parse(localStorage.getItem('cartItems')) || {};
+    
+            if (!restaurantCart[key]) {
+                restaurantCart[key] = [];
+            }
+    
+            // Armazene as informações do item no localStorage
+            var cartItem = {
+                id: itemId,
+                name: itemName,
+                price: itemPrice,
+                restaurant: restaurantName
+            };
+    
+            restaurantCart[key].push(cartItem);
+    
+            localStorage.setItem('cartItems', JSON.stringify(restaurantCart));
+    
+            updateCartInfo();
+        }
+    
+        function calculateTotalItems(cart) {
+            var totalItems = 0;
+    
+            for (var key in cart) {
+                totalItems += cart[key].length;
+            }
+    
+            return totalItems;
+        }
+    
+        function calculateTotalPrice(cart) {
+            var total = 0;
+    
+            for (var key in cart) {
+                for (var i = 0; i < cart[key].length; i++) {
+                    var item = cart[key][i];
+                    total += item.price;
+                }
+            }
+    
+            return total;
+        }
+    </script>
+    
+</body>
+
+</html>

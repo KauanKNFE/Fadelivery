@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Configuração de caracteres e viewport para responsividade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página -->
+    <title>Fadelivery - Cardápio</title>
+
+    <!-- Importação de estilos externos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+        integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../padrao/estilo.css"> <!-- Estilo local -->
+    <link rel="stylesheet" href="../../estilo-padrao/header.css"> <!-- Estilo do cabeçalho -->
+    <link rel="stylesheet" href="../../estilo-padrao/footer.css"> <!-- Estilo do rodapé -->
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-bar">
+            <!-- Logo e link para a página inicial -->
+            <a href="../../index.html">
+                <h1 class="fadelivery">Fadelivery</h1>
+            </a>
+
+            <!-- Ícone do menu mobile e função de alternância -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <rect width="30" height="2" fill="#FFF" />
+                    <rect y="7" width="30" height="2" fill="#FFF" />
+                    <rect y="14" width="30" height="2" fill="#FFF" />
+                    <rect y="21" width="30" height="2" fill="#FFF" />
+                </svg>
+            </div>
+
+            <!-- Lista de navegação -->
+            <ul class="menu">
+                <li><a href="">Fadas</a></li>
+                <li><a href="">Contato</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Nossa Qualidade</a></li>
+
+                <!-- Ícone do carrinho de compras -->
+                <li>
+                    <a href="../../carrinho/index.html">
+                        <div class="basket">
+                            <img class="icon-basket" src="../../img/icons/basket.png" alt="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Corpo principal da página -->
+    <main class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-2 container-t">
+            <div class="name-background">
+                <h1 class="title2">Produtos Botânicos Exclusivos</h1>
+            </div>
+            <p>Descubra a beleza da natureza com nossos produtos botânicos selecionados cuidadosamente para você!</p>
+    
+            <h2>Nossos favoritos botânicos!</h2>
+    
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../../img/blank.jpeg" alt=""><div class="overlay-text"><h1>Orquídea Rara</h1></div></div>
+                    <div class="swiper-slide"><img src="../../img/blank.jpeg" alt=""><div class="overlay-text"><h1>Suculenta Encantada</h1></div></div>
+                    <div class="swiper-slide"><img src="../../img/blank.jpeg" alt=""><div class="overlay-text"><h1>Jardim Zen</h1></div></div>
+                    <div class="swiper-slide"><img src="../../img/blank.jpeg" alt=""><div class="overlay-text"><h1>Kit de Plantio</h1></div></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <h2>Entregador: Chase</h2>
+            <div class="fada"><img class="fada-img fadaverde" src="../../img/fadas/verde.jfif" alt=""></div>
+        </div>
+    
+        <div class="pure-u-1 pure-u-md-1-2 container-b">
+            <h1 class="title3">Catálogo Botânico</h1>
+    
+            <h3 class="entrega">Hoje, 18-22 min. R$5,00</h3>
+            <div id="cardapio">
+                <!-- Categoria Plantas Exclusivas -->
+                <h2 class="pure-u-1">Plantas Exclusivas</h2>
+    
+                <!-- Item Orquídea Rara -->
+                <div id="orquidea-rara" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Orquídea Rara</h4>
+                    <p data-price="50.00">R$50,00</p>
+                    <button onclick="addToCart('orquidea-rara', 'Orquídea Rara', 50.00)">Adicionar ao carrinho</button>
+                </div>
+    
+                <!-- Item Suculenta Encantada -->
+                <div id="suculenta-encantada" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Suculenta Encantada</h4>
+                    <p data-price="30.00">R$30,00</p>
+                    <button onclick="addToCart('suculenta-encantada', 'Suculenta Encantada', 30.00)">Adicionar ao carrinho</button>
+                </div>
+    
+                <!-- Categoria Decoração Botânica -->
+                <h2 class="pure-u-1">Decoração Botânica</h2>
+    
+                <!-- Item Jardim Zen -->
+                <div id="jardim-zen" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Jardim Zen</h4>
+                    <p data-price="40.00">R$40,00</p>
+                    <button onclick="addToCart('jardim-zen', 'Jardim Zen', 40.00)">Adicionar ao carrinho</button>
+                </div>
+    
+                <!-- Item Terrário de Vidro -->
+                <div id="terrario-vidro" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Terrário de Vidro</h4>
+                    <p data-price="35.00">R$35,00</p>
+                    <button onclick="addToCart('terrario-vidro', 'Terrário de Vidro', 35.00)">Adicionar ao carrinho</button>
+                </div>
+    
+                <!-- Categoria Plantio em Casa -->
+                <h2 class="pure-u-1">Plantio em Casa</h2>
+    
+                <!-- Item Kit de Plantio -->
+                <div id="kit-plantio" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Kit de Plantio</h4>
+                    <p data-price="25.00">R$25,00</p>
+                    <button onclick="addToCart('kit-plantio', 'Kit de Plantio', 25.00)">Adicionar ao carrinho</button>
+                </div>
+    
+                <!-- Item Vasos Coloridos -->
+                <div id="vasos-coloridos" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Vasos Coloridos</h4>
+                    <p data-price="20.00">R$20,00</p>
+                    <button onclick="addToCart('vasos-coloridos', 'Vasos Coloridos', 20.00)">Adicionar ao carrinho</button>
+                </div>
+    
+                <!-- Categoria Acessórios Botânicos -->
+                <h2 class="pure-u-1">Acessórios Botânicos</h2>
+    
+                <!-- Item Adubo Natural -->
+                <div id="adubo-natural" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Adubo Natural</h4>
+                    <p data-price="15.00">R$15,00</p>
+                    <button onclick="addToCart('adubo-natural', 'Adubo Natural', 15.00)">Adicionar ao carrinho</button>
+                </div>
+    
+                <!-- Item Ferramentas de Jardinagem -->
+                <div id="ferramentas-jardinagem" class="item pure-u-1-2">
+                    <img class="img-item" src="../../img/blank.jpeg" alt="">
+                    <h4>Ferramentas de Jardinagem</h4>
+                    <p data-price="18.00">R$18,00</p>
+                    <button onclick="addToCart('ferramentas-jardinagem', 'Ferramentas de Jardinagem', 18.00)">Adicionar ao carrinho</button>
+                </div>
+            </div>
+    
+            <a href="../../carrinho/index.html"><h3 class="entrega2">Itens no carrinho: <span
+                    id="cart-count">0</span> - Total: R$<span id="total-price">0.00</span><p></p> Compre
+                Agora!</h3></a>
+        </div>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-bar pure-g">
+            <!-- Links para redes sociais -->
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social"
+                        src="../../img/icons/instagram.png" alt=""> <h1>Instagram</h1> </div></a>
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social"
+                        src="../../img/icons/facebook.png" alt=""> <h1>Facebook</h1> </div></a>
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social"
+                        src="../../img/icons/twitter.png" alt=""> <h1>Twitter</h1> </div></a>
+
+            <!-- Direitos autorais -->
+            <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
+        </div>
+    </footer>
+
+    <!-- Script para alternar o menu mobile -->
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicialização do Swiper para o slider
+        document.addEventListener('DOMContentLoaded', function () {
+            var swiper = new Swiper(".mySwiper", {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                effect: "cards",
+                grabCursor: true,
+            });
+        });
+    </script>
+    <script>
+        // Função para atualizar a contagem e o valor total do carrinho na página do restaurante
+        function updateCartInfo() {
+            var cartCountElement = document.getElementById('cart-count');
+            var totalPriceElement = document.getElementById('total-price');
+    
+            // Recupere as informações do localStorage
+            var storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+    
+            // Atualize a contagem e o valor total na página do restaurante
+            var totalItems = calculateTotalItems(storedCartItems);
+            var total = calculateTotalPrice(storedCartItems);
+    
+            cartCountElement.textContent = totalItems;
+            totalPriceElement.textContent = total.toFixed(2);
+        }
+    
+        // Chamada à função updateCartInfo ao carregar a página ou sempre que a página for exibida
+        document.addEventListener('DOMContentLoaded', updateCartInfo);
+        window.addEventListener('pageshow', updateCartInfo);
+    
+        function addToCart(itemId, itemName, itemPrice, restaurantName) {
+            // Use o nome do restaurante como chave no localStorage
+            var key = restaurantName || 'default';
+            var restaurantCart = JSON.parse(localStorage.getItem('cartItems')) || {};
+    
+            if (!restaurantCart[key]) {
+                restaurantCart[key] = [];
+            }
+    
+            // Armazene as informações do item no localStorage
+            var cartItem = {
+                id: itemId,
+                name: itemName,
+                price: itemPrice,
+                restaurant: restaurantName
+            };
+    
+            restaurantCart[key].push(cartItem);
+    
+            localStorage.setItem('cartItems', JSON.stringify(restaurantCart));
+    
+            updateCartInfo();
+        }
+    
+        function calculateTotalItems(cart) {
+            var totalItems = 0;
+    
+            for (var key in cart) {
+                totalItems += cart[key].length;
+            }
+    
+            return totalItems;
+        }
+    
+        function calculateTotalPrice(cart) {
+            var total = 0;
+    
+            for (var key in cart) {
+                for (var i = 0; i < cart[key].length; i++) {
+                    var item = cart[key][i];
+                    total += item.price;
+                }
+            }
+    
+            return total;
+        }
+    </script>
+    
+</body>
+
+</html>

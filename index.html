@@ -32,7 +32,7 @@
                 <li><a href="">Nossa Qualidade</a></li>
                 <!-- Ícone do carrinho de compras -->
                 <li>
-                    <a href="">
+                    <a href="carrinho/index.html">
                       <div class="basket">
                         <img class="icon-basket" src="img/icons/basket.png" alt="">
                     </div>
@@ -55,6 +55,9 @@
                 <div class="swiper-slide"><img src="img/banners/tacos.jpg" alt=""><div class="overlay-text"><h1>Taco's Mexican</h1></div></div>
                 <div class="swiper-slide"><img src="img/banners/cafe.jpg" alt=""><div class="overlay-text"><h1>Flora & Café</h1></div></div>
             </div>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
 
         <!-- Categorias e botão de entrada -->
@@ -62,39 +65,39 @@
             <!-- Cada célula representa uma categoria -->
             <!-- Exemplo de categoria: Supermercado -->
             <div class="pure-u-1-3 pure-u-md-1-6 celula">
-                <div class="category">
+                <a href="cardapio/supermercado/index.html"><div class="category">
                     <img class="icon" src="img/icons/basket_c.png" alt="">
-                </div>
+                </div></a>
                 <p>Supermercado</p>
             </div>
             <div class="pure-u-1-3 pure-u-md-1-6 celula">
-                <div class="category">
+                <a href="cardapio/restaurantes/index.html"><div class="category">
                     <img class="icon" src="img/icons/restaurant.png" alt="">
-                </div>
+                </div></a>
                 <p>Restaurantes</p>
             </div>
             <div class="pure-u-1-3 pure-u-md-1-6 celula">
-                <div class="category">
+                <a href="cardapio/farmacia/index.html"><div class="category">
                     <img class="icon" src="img/icons/medicines.png" alt="">
-                </div>
+                </div></a>
                 <p>Farmácia</p>
             </div>
             <div class="pure-u-1-3 pure-u-md-1-6 celula">
-                <div class="category">
+                <a href="cardapio/petshop/index.html"><div class="category">
                     <img class="icon" src="img/icons/paw.png" alt="">
-                </div>
+                </div></a>
                 <p>Pet-Shop</p>
             </div>
             <div class="pure-u-1-3 pure-u-md-1-6 celula">
-                <div class="category">
+                <a href="cardapio/eventos/index.html"><div class="category">
                     <img class="icon" src="img/icons/confetti.png" alt="">
-                </div>
+                </div></a>
                 <p>Eventos</p>
             </div>
             <div class="pure-u-1-3 pure-u-md-1-6 celula">
-                <div class="category">
+                <a href="cardapio/botanica/index.html"><div class="category">
                     <img class="icon" src="img/icons/agriculture.png" alt="">
-                </div>
+                </div></a>
                 <p>Bôtanica</p>
             </div>
         </div>
@@ -132,6 +135,10 @@
         // Inicialização do Swiper para o slider
         document.addEventListener('DOMContentLoaded', function () {
             var swiper = new Swiper(".mySwiper", {
+                navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                },
                 effect: "cards",
                 grabCursor: true,
             });

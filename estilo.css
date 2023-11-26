@@ -27,7 +27,7 @@ h2 {
 
 /* Estilos do Swiper */
 .mySwiper {
-  width: 720px; /* ou outra largura desejada */
+  width: 820px; /* ou outra largura desejada */
   height: 420px;
   margin: 0 auto; /* para centralizar a div */
 }
@@ -41,6 +41,12 @@ h2 {
 }
 
 /* Estilos dos slides do Swiper */
+:root{
+  --swiper-navigation-size: 84px;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: -130px;
+  --swiper-navigation-color: #E9678F;
+}
 .swiper-slide {
   position: relative;
   display: flex;

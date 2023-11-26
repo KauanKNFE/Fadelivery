@@ -1,0 +1,266 @@
+main{
+    font-family: "Montserrat";
+    margin-top: 40px;;
+}
+
+h2 {
+    color: #E9678F;
+    text-align: center;
+    margin-top: 40px;
+}
+.name-background{
+    background-color: #E9678F;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 20px;
+    width: fit-content;
+    margin-right: 40px;
+}
+
+.title2{
+    margin: 0;
+    font-weight: 490;
+}
+p{
+    color: #E9678F;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+.slogan{
+  margin-right: 100px;
+}
+
+/* Estilos do Swiper */
+  :root{
+    --swiper-navigation-size: 44px;
+    --swiper-navigation-top-offset: 50%;
+    --swiper-navigation-sides-offset: -70px;
+    --swiper-navigation-color: #E9678F;
+    --swiper-pagination-top: 310px;
+    --swiper-pagination-color: #E9678F;
+  }
+.mySwiper {
+    width: 300px; /* ou outra largura desejada */
+    height: 300px;
+    margin: 0 auto; /* para centralizar a div */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .mySwiper {
+      width: 200px; /* ou outra largura desejada */
+      height: 200px;
+      margin: 0 auto; /* para centralizar a div */
+      margin-bottom: 40px;
+    }
+    :root{
+        --swiper-pagination-top: 210px;
+    }
+  }
+  .container-swiper{
+    height: 500px;
+  }
+  
+  /* Estilos dos slides do Swiper */
+  .swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    transition: filter 0.3s ease;
+  }
+  
+  .overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: fit-content;
+  }
+  
+  .overlay-text {
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: "Montserrat";
+    width: fit-content;
+  }
+  
+  .swiper-slide:hover .overlay,
+  .swiper-slide:hover .overlay-text {
+    opacity: 1;
+  }
+  
+  .swiper-slide:hover img {
+    filter: blur(5px);
+  }
+  #cardapio {
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 430px;
+    height: 500px;
+    border: 2px solid #dedede;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    position: relative; /* Adicione esta linha */
+    box-shadow: gray 0 0 7px 3px;
+}
+@media screen and (max-width: 768px){
+  #cardapio {
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 380px;
+    height: 500px;
+    border: 2px solid #dedede;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    position: relative; /* Adicione esta linha */
+    box-shadow: gray 0 0 7px 3px;
+}
+}
+/* Funciona no Chrome, Edge e Safari */
+*::-webkit-scrollbar {
+    width: 3px; /* largura da barra de rolagem */
+    display: none;
+  }
+  
+  .item{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+
+  .img-item{
+    width: 80%;
+    border-radius: 20px;
+  }
+  h4{
+    color: #E9678F;
+    margin: 5px;
+    margin-bottom: 0;
+    height: 40px;
+    text-align: center;
+  }
+  .title3{
+    text-align: center;
+    font-weight: 500;
+    color: #E9678F;
+  }
+  .entrega{
+    text-align: center;
+    background-color: #FFECF2;
+    padding: 10px 20px;
+    width: 70%;
+    border-radius: 40px;
+    margin: auto;
+    margin-bottom: 20px;
+    height: 20px;
+  }
+  
+  h3{
+    margin: 0;
+    color: #E9678F;
+  }
+
+  
+
+  button{
+    background-color: #FFECF2;
+    border: none;
+    color: #E9678F;
+    border-radius: 20px;
+    margin-top: 1px;
+    margin-bottom: 20px;
+    padding: 10px 0px;
+    width: 150px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  button:hover{
+    background-color: #E9678F;
+    color: #FFECF2;
+  }
+.entrega2{
+    text-align: center;
+    background-color: #FFECF2;
+    padding: 10px 20px;
+    width: 70%;
+    border-radius: 40px;
+    margin: auto;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #E9678F;
+    transition: all 0.5s ease;
+}
+.entrega2:hover{
+  background-color: #E9678F;
+  color: #FFECF2;
+}
+  
+.fada-img{
+  text-align: center;
+  border-radius: 50%;
+  border: 3px solid #FFECF2;
+  max-width: 200px;
+  
+}
+.fadaverde{
+  box-shadow: #037430 0 0 7px 3px;
+}
+.fadavermelho{
+  box-shadow: #ff3535 0 0 7px 3px;
+}
+.fadaroxo{
+  box-shadow: #9f67e9 0 0 7px 3px;
+}
+.fadarosa{
+  box-shadow: #E9678F 0 0 7px 3px;
+}
+.fadalaranja{
+  box-shadow: #e99348 0 0 7px 3px;
+}
+.fadaazul{
+  box-shadow: #67d6e9 0 0 7px 3px;
+}
+.fada{
+  text-align: center;
+  
+}

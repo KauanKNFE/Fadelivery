@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configuração de caracteres e viewport para responsividade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página -->
+    <title>Fadelivery - Página</title>
+    
+    <!-- Importação de estilos externos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="estilo.css"> <!-- Estilo local -->
+    <link rel="stylesheet" href="../estilo-padrao/header.css"> <!-- Estilo do cabeçalho -->
+    <link rel="stylesheet" href="../estilo-padrao/footer.css"> <!-- Estilo do rodapé -->
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-bar">
+            <!-- Logo e link para a página inicial -->
+            <a href="../index.html"><h1 class="fadelivery">Fadelivery</h1></a>
+            
+            <!-- Ícone do menu mobile e função de alternância -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <rect width="30" height="2" fill="#FFF"/>
+                    <rect y="7" width="30" height="2" fill="#FFF"/>
+                    <rect y="14" width="30" height="2" fill="#FFF"/>
+                    <rect y="21" width="30" height="2" fill="#FFF"/>
+                </svg>
+            </div>
+            
+            <!-- Lista de navegação -->
+            <ul class="menu">
+                <li><a href="">Fadas</a></li>
+                <li><a href="">Contato</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Nossa Qualidade</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="pure-g">
+        <div class="pure-u-1 container-t">
+            <h1 class="title3">Carrinho de Compras</h1>
+    
+            <!-- Lista de itens do carrinho -->
+            <ul id="cart-list"></ul>
+    
+            <!-- Total do carrinho -->
+            <h3>Total: R$<span id="total-price">0.00</span></h3>
+    
+            <!-- Botão para limpar o carrinho -->
+            <button onclick="clearCart()">Limpar Carrinho</button>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-bar pure-g">
+            <!-- Links para redes sociais -->
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="../img/icons/instagram.png" alt=""> <h1>Instagram</h1> </div></a>
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="../img/icons/facebook.png" alt=""> <h1>Facebook</h1> </div></a>
+            <a class="pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="../img/icons/twitter.png" alt=""> <h1>Twitter</h1> </div></a>
+            
+            <!-- Direitos autorais -->
+            <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
+        </div>
+    </footer>
+
+    <!-- Script para alternar o menu mobile -->
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Recupere as informações do localStorage
+    var storedCartData = JSON.parse(localStorage.getItem('cartItems')) || { default: [] };
+
+    // Exiba os itens na lista do carrinho
+    updateCartList(storedCartData.default);
+
+    // Atualize o total com base nas informações recuperadas
+    var totalPriceElement = document.getElementById('total-price');
+    var total = calculateTotalPrice(storedCartData.default);
+    totalPriceElement.textContent = total.toFixed(2);
+
+    // Adicione esta linha para atualizar a lista de itens ao carregar a página
+    updateCartList(storedCartData.default);
+
+    // Atualize a contagem e o valor total na página do restaurante
+    updateRestaurantCartInfo(storedCartData.default);
+});
+
+function updateCartList(cartItems) {
+    var cartListElement = document.getElementById('cart-list');
+    cartListElement.innerHTML = ""; // Limpe a lista antes de adicioná-la novamente
+
+    cartItems.forEach(function (item) {
+        var listItem = document.createElement('li');
+
+        // Adiciona o nome, preço e quantidade
+        listItem.textContent = `${item.name} - R$${item.price.toFixed(2)} - Quantidade: ${item.quantity || 1}`;
+
+        // Adiciona botão de remover
+        var removeButton = document.createElement('button');
+        removeButton.textContent = 'Remover';
+        removeButton.addEventListener('click', function () {
+            removeFromCart(item);
+        });
+
+        listItem.appendChild(removeButton);
+
+        cartListElement.appendChild(listItem);
+    });
+}
+    
+        function calculateTotalPrice(cartItems) {
+            return cartItems.reduce(function (total, item) {
+                return total + item.price * (item.quantity || 1);
+            }, 0);
+        }
+    
+        function clearCart() {
+            // Limpar o carrinho (tanto a variável quanto o localStorage)
+            var storedCartItems = [];
+            localStorage.removeItem('cartItems');
+    
+            // Atualizar a contagem e o preço total na página do carrinho
+            var totalPriceElement = document.getElementById('total-price');
+            totalPriceElement.textContent = '0.00';
+    
+            // Limpar a lista de itens no carrinho
+            updateCartList(storedCartItems);
+    
+            // Atualize a contagem e o valor total na página do restaurante
+            updateRestaurantCartInfo(storedCartItems);
+        }
+    
+        function removeFromCart(item) {
+            // Recupera o carrinho do localStorage
+            var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    
+            // Procura o índice do item no carrinho
+            var index = cartItems.findIndex(function (cartItem) {
+                return cartItem.name === item.name && cartItem.price === item.price;
+            });
+    
+            if (index !== -1) {
+                // Remove o item do carrinho
+                cartItems.splice(index, 1);
+    
+                // Atualiza o carrinho no localStorage
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    
+                // Atualiza a lista e o total na página do carrinho
+                updateCartList(cartItems);
+                var total = calculateTotalPrice(cartItems);
+                var totalPriceElement = document.getElementById('total-price');
+                totalPriceElement.textContent = total.toFixed(2);
+    
+                // Atualize a contagem e o valor total na página do restaurante
+                updateRestaurantCartInfo(cartItems);
+            }
+        }
+    
+        function updateRestaurantCartInfo(cartItems) {
+            // Envia uma mensagem para a página do restaurante indicando que o carrinho foi atualizado
+            window.parent.postMessage({ type: 'updateCartInfo', data: cartItems }, '*');
+        }
+    </script>
+    
+</body>
+</html>
