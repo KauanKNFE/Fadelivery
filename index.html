@@ -26,7 +26,7 @@
             </div>
             <!-- Lista de navegação -->
             <ul class="menu">
-                <li><a href="">Fadas</a></li>
+                <li><a href="fadas/index.html">Fadas</a></li>
                 <li><a href="">Contato</a></li>
                 <li><a href="">FAQ</a></li>
                 <li><a href="">Nossa Qualidade</a></li>
@@ -51,9 +51,9 @@
         <!-- Slider utilizando o Swiper -->
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="img/banners/cafe.jpg" alt=""><div class="overlay-text"><h1>Doce de Mel</h1></div></div>
-                <div class="swiper-slide"><img src="img/banners/tacos.jpg" alt=""><div class="overlay-text"><h1>Taco's Mexican</h1></div></div>
-                <div class="swiper-slide"><img src="img/banners/cafe.jpg" alt=""><div class="overlay-text"><h1>Flora & Café</h1></div></div>
+                <div class="swiper-slide"><a href="cardapio/restaurantes/index.html"><img src="img/banners/restaurantes.jpg" alt=""><div class="overlay-text"><h1>Restaurante</h1></div></a></div>
+                <div class="swiper-slide"><a href="cardapio/petshop/index.html"><img src="img/banners/pet.jpeg" alt=""><div class="overlay-text"><h1>Pet-Shop</h1></div></a></div>
+                <div class="swiper-slide"><a href="cardapio/eventos/index.html"><img src="img/banners/festa.webp" alt=""><div class="overlay-text"><h1>Eventos</h1></div></a></div>
             </div>
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
@@ -104,9 +104,9 @@
 
         <!-- Botão para explorar categorias -->
         <div class="button-basis">
-            <div class="button">
-                <h1>Entre em uma categoria e conheça nossas fadas!</h1>
-            </div>
+            <a href="fadas/index.html"><div class="button">
+                <h1>Escolha por Fada!</h1>
+            </div></a>
         </div>
     </main>
 
@@ -114,9 +114,9 @@
     <footer>
         <div class="footer-bar pure-g">
             <!-- Links para redes sociais -->
-            <a class=" pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="img/icons/instagram.png" alt=""> <h1>Instagram</h1> </div></a>
-            <a class=" pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="img/icons/facebook.png" alt=""> <h1>Facebook</h1> </div></a>
-            <a class=" pure-u-1 pure-u-md-1-8" href=""><div class="icon-footer"> <img class="icon-social" src="img/icons/twitter.png" alt=""> <h1>Twitter</h1> </div></a>
+            <a class=" pure-u-1 pure-u-md-1-8" href="https://instagram.com/fadelivery_express?igshid=MzMyNGUyNmU2YQ=="><div class="icon-footer"> <img class="icon-social" src="img/icons/instagram.png" alt=""> <h1>Instagram</h1> </div></a>
+            <a class=" pure-u-1 pure-u-md-1-8" href="https://www.facebook.com/profile.php?id=61553699655509&mibextid=ZbWKwL"><div class="icon-footer"> <img class="icon-social" src="img/icons/facebook.png" alt=""> <h1>Facebook</h1> </div></a>
+            <a class=" pure-u-1 pure-u-md-1-8" href="https://x.com/fadelivery?s=21"><div class="icon-footer"> <img class="icon-social" src="img/icons/twitter.png" alt=""> <h1>Twitter</h1> </div></a>
             <!-- Texto de direitos autorais -->
             <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
         </div>
@@ -135,6 +135,9 @@
         // Inicialização do Swiper para o slider
         document.addEventListener('DOMContentLoaded', function () {
             var swiper = new Swiper(".mySwiper", {
+                autoplay: {
+                delay: 5000,
+                },
                 navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
