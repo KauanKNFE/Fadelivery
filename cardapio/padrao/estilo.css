@@ -171,6 +171,7 @@ p{
   .img-item{
     width: 80%;
     border-radius: 20px;
+    min-height: 137.6px;
   }
   h4{
     color: #E9678F;

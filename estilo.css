@@ -27,8 +27,8 @@ h2 {
 
 /* Estilos do Swiper */
 .mySwiper {
-  width: 820px; /* ou outra largura desejada */
-  height: 420px;
+  width: 720px; /* ou outra largura desejada */
+  height: 320px;
   margin: 0 auto; /* para centralizar a div */
 }
 
@@ -37,6 +37,9 @@ h2 {
     width: 320px; /* ou outra largura desejada */
     height: 180px;
     margin: 0 auto; /* para centralizar a div */
+  }
+  .swiper-button-prev, .swiper-button-next{
+    display: none;
   }
 }
 

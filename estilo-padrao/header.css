@@ -50,11 +50,14 @@ body, html {
     margin: 20px 0px;
 }
 
-.menu li {
+header .menu li {
     margin: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+header ul{
+    width: 60%;
 }
 
 .menu a {
