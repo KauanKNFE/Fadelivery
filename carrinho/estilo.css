@@ -1,0 +1,158 @@
+.main {
+    font-family: "Montserrat";
+}
+
+.title3 {
+    text-align: center;
+}
+
+.lista {
+    background-color: #FFECF2;
+    min-height: 200px;
+    width: 400px;
+    display: flex;
+    border-radius: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center; /* Adicionado para centralizar verticalmente */
+}
+
+.clear {
+    margin-bottom: 20;
+    background-color: #E9678F;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    color: #FFECF2;
+    height: fit-content;
+    font-family: "Montserrat";
+    margin-bottom: 20px;
+    align-self: flex-end; /* Adicionado para alinhar à extremidade inferior */
+    cursor: pointer;
+}
+.remover{
+    background-color: #E9678F;
+    border: none;
+    border-radius: 20px;
+    color: #FFECF2;
+    text-align: center;
+    margin: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.clear:hover, .remover:hover{
+    background-color: white;
+    color: #E9678F;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+li {
+    list-style: none;
+    color: #E9678F;
+    font-family: "Montserrat";
+}
+ul{
+    width: 100%;
+}
+h3, .title3{
+    font-family: "Montserrat";
+    color: #E9678F;
+    margin-bottom: 50px;
+}
+.form-container{
+    font-family: "Montserrat";
+    display: flex;
+    color: #E9678F;
+    font-size: 20px;
+    font-weight: 600;
+    justify-items: center;
+    width: 90%;
+    margin:auto;
+}
+
+input, textarea{
+    color: #E9678F;
+    border:1px solid #E9678F;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    resize: none;
+    width: 80%;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #E9678F;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #E9678F;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #E9678F;
+  }
+  input:focus {
+    outline-color: green;
+    outline-style: solid;
+  }
+
+  .button {
+    background-color: #E9678F;
+    color: #FFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+    width: fit-content;
+    padding: 0 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 30px;
+    text-align: center;
+  }
+  .label{
+    margin-bottom: 30px;
+  }
+
+  /* Estilo do modal */
+  .modal {
+    display: none; /* Inicialmente esconde o modal */
+    position: fixed; /* Permite que o modal permaneça fixo na tela */
+    top: 50%; /* Coloca o topo do modal no meio da tela */
+    left: 50%; /* Coloca a borda esquerda do modal no meio da tela */
+    transform: translate(-50%, -50%); /* Move o modal de volta para o centro exato */
+    z-index: 1; /* Garante que o modal esteja acima do conteúdo da página */
+    width: 300px; /* Ajuste a largura conforme necessário */
+    padding: 20px;
+    background-color: #FFECF2;
+    border-radius: 20px;
+    box-shadow: rgb(255, 198, 230) 0 0 8px 3px;
+    color: #E9678F;
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    text-align: center;
+}
+
+/* Estilo do botão de fechar */
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #E9678F;
+}

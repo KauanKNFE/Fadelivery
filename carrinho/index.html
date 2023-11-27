@@ -11,9 +11,10 @@
     <!-- Importação de estilos externos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
-    <link rel="stylesheet" href="estilo.css"> <!-- Estilo local -->
+    
     <link rel="stylesheet" href="../estilo-padrao/header.css"> <!-- Estilo do cabeçalho -->
     <link rel="stylesheet" href="../estilo-padrao/footer.css"> <!-- Estilo do rodapé -->
+    <link rel="stylesheet" href="estilo.css"> <!-- Estilo local -->
 </head>
 <body>
     <!-- Cabeçalho -->
@@ -38,22 +39,82 @@
                 <li><a href="">Contato</a></li>
                 <li><a href="">FAQ</a></li>
                 <li><a href="">Nossa Qualidade</a></li>
+                
+                <!-- Ícone do carrinho de compras -->
+                <li>
+                    <a href="">
+                      <div class="basket">
+                        <img class="icon-basket" src="../img/icons/basket.png" alt="">
+                    </div>
+                    </a>
+                </li>
             </ul>
         </div>
     </header>
 
     <main class="pure-g">
         <div class="pure-u-1 container-t">
-            <h1 class="title3">Carrinho de Compras</h1>
-    
-            <!-- Lista de itens do carrinho -->
+            <h1 class="title3">Carrinho de Compras</h1> 
+        </div>
+        <div class="container pure-u-1 pure-u-md-1-2">
+            <div class="lista"><!-- Lista de itens do carrinho -->
             <ul id="cart-list"></ul>
-    
+            <button class="clear" onclick="clearCart()">Limpar Carrinho</button>
+            </div>
             <!-- Total do carrinho -->
             <h3>Total: R$<span id="total-price">0.00</span></h3>
     
             <!-- Botão para limpar o carrinho -->
-            <button onclick="clearCart()">Limpar Carrinho</button>
+            
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2">
+            <div class="form-container">
+            <form id="pedidoForm" class="pure-g">
+                <!-- Campo de Nome -->
+                <div class="pure-u-1 pure-u-md-1-2">
+                <label for="nome">Nome:</label> <br>
+                <input type="text" id="nome" name="nome" required>
+            
+                <br>
+            
+                <!-- Campos de Endereço com preenchimento automático por CEP -->
+                <label for="cep">CEP:</label> <br>
+                <input type="text" id="cep" name="cep" maxlength="9" placeholder="12345-678" required onblur="preencherEndereco()">
+            
+                <br>
+            
+                <label for="logradouro">Logradouro:</label> <br>
+                <input type="text" id="logradouro" name="logradouro" required readonly>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2">
+            
+                <label for="numero">Número:</label> <br>
+                <input type="text" id="numero" name="numero" required>
+            
+                <br>
+            
+                <label for="cidade">Cidade:</label> <br>
+                <input type="text" id="cidade" name="cidade" required readonly>
+            
+                <br>
+            
+                <label for="estado">Estado:</label> <br>
+                <input type="text" id="estado" name="estado" required readonly>
+            
+                </div>
+                <div pure-u-1>
+                <!-- Campo para Informações Extras sobre o Pedido -->
+                <label for="informacoesExtras">Informações Extras:</label> <br>
+                <textarea id="informacoesExtras" name="informacoesExtras" rows="4" cols="50"></textarea>
+                
+                
+                </div>
+                <br>
+            
+                <!-- Botão de Envio -->
+                <button class="button" type="submit">Enviar Pedido</button>
+              </form>
+            </div>
         </div>
     </main>
 
@@ -69,7 +130,42 @@
             <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
         </div>
     </footer>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <p>Pedido enviado com sucesso! <br> Acompanhe seu pedido.</p>
+            <a href=""><button class="button">Acompanhar</button></a>
+        </div>
+    </div>
 
+    <script>
+        // Função para preencher automaticamente os campos de endereço com base no CEP
+        function preencherEndereco() {
+            // ... (código existente)
+        }
+
+        // Função para fechar o modal
+        function fecharModal() {
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'none';
+        }
+
+        // Adiciona um evento de envio ao formulário
+        document.getElementById('pedidoForm').addEventListener('submit', function (event) {
+            // Impede o envio padrão do formulário
+            event.preventDefault();
+
+            // Limpar o formulário
+            document.getElementById('pedidoForm').reset();
+
+            // Limpar o carrinho
+            clearCart();
+
+            // Exibir o modal
+            var modal = document.getElementById('myModal');
+            modal.style.display = 'block';
+        });
+    </script>
     <!-- Script para alternar o menu mobile -->
     <script>
         function toggleMenu() {
@@ -104,12 +200,13 @@ function updateCartList(cartItems) {
     cartItems.forEach(function (item) {
         var listItem = document.createElement('li');
 
-        // Adiciona o nome, preço e quantidade
-        listItem.textContent = `${item.name} - R$${item.price.toFixed(2)} - Quantidade: ${item.quantity || 1}`;
+        // Adiciona o nome e preço (sem quantidade)
+        listItem.textContent = `${item.name} - R$${item.price.toFixed(2)}`;
 
         // Adiciona botão de remover
         var removeButton = document.createElement('button');
         removeButton.textContent = 'Remover';
+        removeButton.classList.add('remover'); // Adiciona a classe 'remover'
         removeButton.addEventListener('click', function () {
             removeFromCart(item);
         });
@@ -119,7 +216,6 @@ function updateCartList(cartItems) {
         cartListElement.appendChild(listItem);
     });
 }
-    
         function calculateTotalPrice(cartItems) {
             return cartItems.reduce(function (total, item) {
                 return total + item.price * (item.quantity || 1);
@@ -144,36 +240,70 @@ function updateCartList(cartItems) {
     
         function removeFromCart(item) {
             // Recupera o carrinho do localStorage
-            var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    
+            var cartData = JSON.parse(localStorage.getItem('cartItems')) || { default: [] };
+            var cartItems = cartData.default;
+
+            // Converte o objeto em array
+            var cartArray = Object.values(cartItems);
+
             // Procura o índice do item no carrinho
-            var index = cartItems.findIndex(function (cartItem) {
+            var index = cartArray.findIndex(function (cartItem) {
                 return cartItem.name === item.name && cartItem.price === item.price;
             });
-    
+
             if (index !== -1) {
                 // Remove o item do carrinho
-                cartItems.splice(index, 1);
-    
+                cartArray.splice(index, 1);
+
                 // Atualiza o carrinho no localStorage
-                localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    
+                localStorage.setItem('cartItems', JSON.stringify({ default: cartArray }));
+
                 // Atualiza a lista e o total na página do carrinho
-                updateCartList(cartItems);
-                var total = calculateTotalPrice(cartItems);
+                updateCartList(cartArray);
+                var total = calculateTotalPrice(cartArray);
                 var totalPriceElement = document.getElementById('total-price');
                 totalPriceElement.textContent = total.toFixed(2);
-    
-                // Atualize a contagem e o valor total na página do restaurante
-                updateRestaurantCartInfo(cartItems);
+
+                // Atualiza a contagem e o valor total na página do restaurante
+                updateRestaurantCartInfo(cartArray);
             }
         }
+
     
         function updateRestaurantCartInfo(cartItems) {
             // Envia uma mensagem para a página do restaurante indicando que o carrinho foi atualizado
             window.parent.postMessage({ type: 'updateCartInfo', data: cartItems }, '*');
         }
     </script>
+    <script>
+        // Função para preencher automaticamente os campos de endereço com base no CEP
+        function preencherEndereco() {
+          var cep = document.getElementById('cep').value;
+    
+          // Verifica se o campo CEP possui valor informado.
+          if (cep != "") {
+    
+            // Expressão regular para validar o CEP.
+            var validacep = /^[0-9]{5}-?[0-9]{3}$/;
+    
+            // Valida o formato do CEP.
+            if(validacep.test(cep)) {
+    
+              // Consulta o webservice viacep.com.br/
+              fetch(`https://viacep.com.br/ws/${cep}/json/`)
+                .then(response => response.json())
+                .then(data => {
+                  document.getElementById('logradouro').value = data.logradouro;
+                  document.getElementById('cidade').value = data.localidade;
+                  document.getElementById('estado').value = data.uf;
+                })
+                .catch(e => {
+                  console.log('Erro: ' + e.message);
+                });
+            }
+          }
+        }
+      </script>
     
 </body>
 </html>
