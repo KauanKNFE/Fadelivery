@@ -155,12 +155,13 @@ h2 {
   font-weight: 500;
   line-height: 1.5;
   width: fit-content;
-  padding: 0 30px;
+  padding: 1px 30px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin: 0 30px;
+  margin-bottom: 30px;
 }
 
 /* Estilos responsivos */

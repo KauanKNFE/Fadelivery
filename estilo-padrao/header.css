@@ -104,8 +104,8 @@ header ul{
         max-height: 500px; /* Altura máxima suficiente para exibir todos os itens do menu */
     }
 
-    .menu li {
-        margin: 10px 0;
+    .menu a {
+        margin: 10px 20px;
     }
 
     .menu-toggle {

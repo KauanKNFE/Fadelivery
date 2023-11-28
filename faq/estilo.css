@@ -1,0 +1,43 @@
+html{
+    font-family: "Montserrat";
+}
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.h1{
+    color: #E9678F;
+    font-size: 500%;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0 40px;
+    margin-top: 30px;
+}
+.container{
+    margin-top: 20px;
+    border-radius: 20px;
+    background: #FFECF2;
+    padding: 20px;
+    width: 80%;
+    margin-bottom: 30px;
+}
+.question{
+    color: #E4405F;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+.answer{
+    color: #E9678F;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}

@@ -35,8 +35,8 @@
             <!-- Lista de navegação -->
             <ul class="menu">
                 <li><a href="../fadas/index.html">Fadas</a></li>
-                <li><a href="../contato/index.html">Contato</a></li>
                 <li><a href="../faq/index.html">FAQ</a></li>
+                <li><a href="../nossa qualidade/index.html">Nossa Qualidade</a></li>
                 
                 <!-- Ícone do carrinho de compras -->
                 <li>
@@ -50,20 +50,29 @@
         </div>
     </header>
     <main>
-        <h1 class="h1">Garantia de Qualidade do Fadelivery</h1>
-        <div class="container">
-            <h3 class="answer">O compromisso do Fadelivery com a excelência é refletido em nossa sólida garantia de qualidade. Priorizamos a segurança dos dados, implementando medidas avançadas para proteger informações pessoais. Nosso design intuitivo facilita a navegação, tornando a experiência do usuário eficiente.
-                Comprometemo-nos com a precisão em cada detalhe, desde menus até estimativas de entrega. Valorizamos o feedback dos usuários, usando-o para aprimorar continuamente nosso serviço. Com atendimento ao cliente disponível 24/7, garantimos suporte dedicado.
-                Ao escolher o Fadelivery, os usuários confiam não apenas em entregas de comida, mas em uma experiência de qualidade que supera expectativas. Estamos empenhados em manter e aprimorar esses padrões, proporcionando uma jornada gastronômica excepcional.
-                <br> <br>
-                
-                Expressamos nossa sincera gratidão por escolher o Fadelivery. Valorizamos profundamente a sua preferência e confiança em nossos produtos/serviços.
-                É um privilégio atendê-lo(a) e estamos comprometidos em proporcionar a melhor experiência possível. Cada escolha sua fortalece nosso compromisso com a excelência e nos motiva a superar suas expectativas.
-                Agradecemos por fazer parte da nossa jornada. Estamos aqui para atendê-lo(a) com dedicação e qualidade. Seja bem-vindo(a) à família Fadelivery.
-                Com apreço,
-                <br> <br>
-                A Equipe Fadelivery</h3>
-        </div>
+        <div class="pure-g ">
+            <div class="pure-u-1 pure-u-md-1-2 left">
+              <h1 class="h1">Fadelivery</h1>
+              <p class="p">Do toque mágico a sua mesa, uma entrega encantada para cada paladar!</p>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-2 container">
+              <h2 class="h2">Entre em Contato:</h2>
+              <form class="form" action="https://formsubmit.co/enterprisefadelivery@gmail.com" method="POST">
+                <fieldset>
+                  <h4>Nome Completo</h4>
+                  <input type="text" name="name" class="pure-input-1">
+                  <h4>Email</h4>
+                  <input type="email" name="email" class="pure-input-1" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                  <input type="hidden" name="_autoresponse" value="Obrigado por entrar em contato com a Fadelivery, faremos o possível para te responder em instantes!">
+                  <h4>Mensagem</h4>
+                  <textarea name="message" class="pure-input-1"></textarea>
+                  <input type="hidden" name="_template" value="table">
+                  <input type="hidden" name="_next" value="resposta.html">
+                  <button type="submit" class="button">Contate-nos</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
     </main>
     <!-- Rodapé -->
     <footer>
@@ -77,7 +86,6 @@
           <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
       </div>
   </footer>
-
   <!-- Script para alternar o menu mobile -->
   <script>
       function toggleMenu() {

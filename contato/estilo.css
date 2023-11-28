@@ -1,0 +1,126 @@
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1{
+    font-family: "Ingrid";
+    color: #E9678F;
+    font-size: 800%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+.h2{
+    font-family: "Montserrat";
+    font-size: 32px;
+    text-align: center;
+    font-weight: 500;
+    color: #E9678F;
+}
+h4{
+    color: #E4405F;
+    font-family: Montserrat;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+}
+.p{
+    font-size: 36px;
+    margin-top: 40px;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    font-family: "Montserrat";
+    color: #E9678F;
+}
+.form{
+    display: flex;
+    text-align: start;
+    flex-direction: row;
+    background-color: #FFECF2;
+    border: none;
+    border-radius: 20px;
+    width: 80%;
+    margin-bottom: 30px;
+}
+fieldset{
+    width: 100%;
+    padding: 30px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+input, textarea{
+    color: #E9678F;
+    border:none;
+    border-radius: 20px;
+    padding: 5px 20px;
+    height: 30px;
+    font-size: 25px;
+    resize: none;
+    width: 80%;
+}
+textarea{
+    height: 80px;
+}
+
+.button {
+    background-color: #E9678F;
+    color: #FFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+    width: fit-content;
+    padding: 0 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px 30px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .button:hover{
+    background-color: #E4405F;
+  }
+
+  /* Estilo do modal */
+  .modal {
+    display: none; /* Inicialmente esconde o modal */
+    position: fixed; /* Permite que o modal permaneça fixo na tela */
+    top: 50%; /* Coloca o topo do modal no meio da tela */
+    left: 50%; /* Coloca a borda esquerda do modal no meio da tela */
+    transform: translate(-50%, -50%); /* Move o modal de volta para o centro exato */
+    z-index: 1; /* Garante que o modal esteja acima do conteúdo da página */
+    width: 300px; /* Ajuste a largura conforme necessário */
+    padding: 20px;
+    background-color: #FFECF2;
+    border-radius: 20px;
+    box-shadow: rgb(255, 198, 230) 0 0 8px 3px;
+    color: #E9678F;
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+    text-align: center;
+}
+
+/* Estilo do botão de fechar */
+.close {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #E9678F;
+}

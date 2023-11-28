@@ -101,9 +101,10 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    height: 610px;
+    height: fit-content;
+    position: relative;
     gap: 10px;
-    margin-bottom: 350px;
+    margin-bottom: 30px;
   
     > div {
       flex: 0 0 80%;
