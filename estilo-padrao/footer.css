@@ -6,14 +6,17 @@
 }
 
 /* Estilos gerais para o elemento footer */
+main{
+    min-height: 100vh;
+}
 footer {
     color: #E9678F;
     font-family: "Montserrat";
     font-weight: 600;
     line-height: normal;
+    position: relative;
     bottom: 0;
     width: 100%;
-    margin-top: 30px;
 }
 
 /* Estilos específicos para o grid do footer usando a classe .pure-g */

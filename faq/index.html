@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Configuração de caracteres e viewport para responsividade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título da página -->
+    <title>Fadelivery - Página</title>
+    
+    <!-- Importação de estilos externos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
+    <link rel="stylesheet" href="estilo.css"> <!-- Estilo local -->
+    <link rel="stylesheet" href="../estilo-padrao/header.css"> <!-- Estilo do cabeçalho -->
+    <link rel="stylesheet" href="../estilo-padrao/footer.css"> <!-- Estilo do rodapé -->
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="header-bar">
+            <!-- Logo e link para a página inicial -->
+            <a href="../index.html"><h1 class="fadelivery">Fadelivery</h1></a>
+            
+            <!-- Ícone do menu mobile e função de alternância -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <rect width="30" height="2" fill="#FFF"/>
+                    <rect y="7" width="30" height="2" fill="#FFF"/>
+                    <rect y="14" width="30" height="2" fill="#FFF"/>
+                    <rect y="21" width="30" height="2" fill="#FFF"/>
+                </svg>
+            </div>
+            
+            <!-- Lista de navegação -->
+            <ul class="menu">
+                <li><a href="../fadas/index.html">Fadas</a></li>
+                <li><a href="">Contato</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Nossa Qualidade</a></li>
+                
+                <!-- Ícone do carrinho de compras -->
+                <li>
+                    <a href="../carrinho/index.html">
+                      <div class="basket">
+                        <img class="icon-basket" src="../img/icons/basket.png" alt="">
+                    </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+      
+    </main>
+    <!-- Rodapé -->
+    <footer>
+      <div class="footer-bar pure-g">
+          <!-- Links para redes sociais -->
+          <a class=" pure-u-1 pure-u-md-1-8" href="https://instagram.com/fadelivery_express?igshid=MzMyNGUyNmU2YQ=="><div class="icon-footer"> <img class="icon-social" src="../img/icons/instagram.png" alt=""> <h1>Instagram</h1> </div></a>
+            <a class=" pure-u-1 pure-u-md-1-8" href="https://www.facebook.com/profile.php?id=61553699655509&mibextid=ZbWKwL"><div class="icon-footer"> <img class="icon-social" src="../img/icons/facebook.png" alt=""> <h1>Facebook</h1> </div></a>
+            <a class=" pure-u-1 pure-u-md-1-8" href="https://x.com/fadelivery?s=21"><div class="icon-footer"> <img class="icon-social" src="../img/icons/twitter.png" alt=""> <h1>Twitter</h1> </div></a>
+            
+          <!-- Direitos autorais -->
+          <div class="pure-u-1 pure-u-md-1-2"><h1> Fadelivery inc. Todos os direitos reservados, 2023 </h1></div>
+      </div>
+  </footer>
+
+  <!-- Script para alternar o menu mobile -->
+  <script>
+      function toggleMenu() {
+          var menu = document.querySelector('.menu');
+          menu.classList.toggle('active');
+      }
+  </script>
+</body>
+</html>
