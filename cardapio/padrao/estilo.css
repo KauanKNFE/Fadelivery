@@ -48,13 +48,16 @@ p{
   
   @media screen and (max-width: 768px) {
     .mySwiper {
-      width: 200px; /* ou outra largura desejada */
+      width: 60%; /* ou outra largura desejada */
       height: 200px;
       margin: 0 auto; /* para centralizar a div */
       margin-bottom: 40px;
     }
     :root{
         --swiper-pagination-top: 210px;
+    }
+    .swiper-button-prev, .swiper-button-next{
+      display: none;
     }
   }
   .container-swiper{
@@ -128,7 +131,7 @@ p{
     border-radius: 20px;
     padding: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin: auto;
     flex-wrap: wrap;
     margin-bottom: 30px;
@@ -139,7 +142,7 @@ p{
   #cardapio {
     overflow: scroll;
     overflow-x: hidden;
-    width: 380px;
+    width: 90%;
     height: 500px;
     border: 2px solid #dedede;
     border-radius: 20px;
@@ -169,7 +172,7 @@ p{
   }
 
   .img-item{
-    width: 80%;
+    width: 100%;
     border-radius: 20px;
     min-height: 137.6px;
   }
