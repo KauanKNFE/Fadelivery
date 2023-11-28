@@ -120,6 +120,7 @@ input, textarea{
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 0 30px;
+    margin-bottom: 30px;
     text-align: center;
   }
   .label{
