@@ -7,7 +7,7 @@
 
 /* Estilos gerais para o elemento footer */
 main{
-    min-height: 73vh;
+    min-height: calc(100vh - (90px + 110px));
 }
 footer {
     color: #E9678F;
